@@ -1,4 +1,5 @@
 #include "Brain.hpp"
+
 Brain::Brain()
 {
 	std::cout << "Brain Constructor" << std::endl;

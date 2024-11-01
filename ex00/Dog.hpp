@@ -1,13 +1,14 @@
 #ifndef DOG_HPP
-# define DOG_HPP
+#define DOG_HPP
 
 #include <iostream>
 #include <string>
+
 #include "Animal.hpp"
 
 class Dog : public Animal
 {
-	public:
+public:
 	Dog();
 	virtual ~Dog();
 	Dog(const Dog& rhs);
