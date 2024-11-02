@@ -10,7 +10,7 @@ WrongCat::~WrongCat()
 	std::cout << "WrongCat Destructor" << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat& rhs) : WrongAnimal(rhs.type)
+WrongCat::WrongCat(const WrongCat& other) : WrongAnimal(other.type)
 {
 	std::cout << "WrongCat copy Constructor" << std::endl;
 }

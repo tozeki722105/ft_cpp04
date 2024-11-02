@@ -10,13 +10,14 @@ Cat::~Cat()
 	std::cout << "Cat Destructor" << std::endl;
 }
 
-Cat::Cat(const Cat& rhs) : Animal(rhs.type)
+Cat::Cat(const Cat& otehr) : Animal(otehr.type)
 {
 	std::cout << "Cat copy Constructor" << std::endl;
 }
 
 Cat& Cat::operator=(const Cat& rhs)
 {
+	std::cout << "Cat Assignment Operator: " << type << std::endl;
 	if (this == &rhs)
 		return (*this);
 	this->type = rhs.type;

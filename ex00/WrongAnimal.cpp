@@ -15,7 +15,7 @@ WrongAnimal::~WrongAnimal()
 	std::cout << "WrongAnimal Destructor" << std::endl;
 }
 
-WrongAnimal::WrongAnimal(const WrongAnimal& rhs) : type(rhs.type)
+WrongAnimal::WrongAnimal(const WrongAnimal& other) : type(other.type)
 {
 	std::cout << "WrongAnimal Copy Constructor" << std::endl;
 }
@@ -33,7 +33,7 @@ void WrongAnimal::makeSound() const
 	std::cout << "Wrong Animal Sound" << std::endl;
 }
 
-std::string WrongAnimal::getType() const
+const std::string& WrongAnimal::getType() const
 {
 	return (this->type);
 }
