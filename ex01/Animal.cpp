@@ -15,21 +15,21 @@ Animal::~Animal()
 	std::cout << "Animal Destructor: " << type << std::endl;
 }
 
-Animal::Animal(const Animal& rhs) : type(rhs.type)
+Animal::Animal(const Animal& other) : type(other.type)
 {
 	std::cout << "Animal Copy Constructor: " << type << std::endl;
 }
 
 Animal& Animal::operator=(const Animal& rhs)
 {
+	std::cout << "Animal Assignment Operator: " << type << std::endl;
 	if (this == &rhs)
 		return (*this);
 	this->type = rhs.type;
-	std::cout << "Animal Assignment Operator: " << type << std::endl;
 	return (*this);
 }
 
-std::string Animal::getType() const
+const std::string& Animal::getType() const
 {
 	return (this->type);
 }
