@@ -5,7 +5,7 @@ AAnimal::AAnimal() : type("Generic AAnimal")
 	std::cout << "AAnimal Constructor: Generic AAnimal" << std::endl;
 }
 
-AAnimal::AAnimal(const std::string &t) : type(t)
+AAnimal::AAnimal(const std::string& t) : type(t)
 {
 	std::cout << "AAnimal Constructor: " << t << std::endl;
 }
@@ -15,21 +15,21 @@ AAnimal::~AAnimal()
 	std::cout << "AAnimal Destructor: " << type << std::endl;
 }
 
-AAnimal::AAnimal(const AAnimal &rhs) : type(rhs.type)
+AAnimal::AAnimal(const AAnimal& other) : type(other.type)
 {
 	std::cout << "AAnimal Copy Constructor: " << type << std::endl;
 }
 
-AAnimal &AAnimal::operator=(const AAnimal &rhs)
+AAnimal& AAnimal::operator=(const AAnimal& rhs)
 {
+	std::cout << "AAnimal Assignment Operator: " << type << std::endl;
 	if (this == &rhs)
 		return (*this);
 	this->type = rhs.type;
-	std::cout << "AAnimal Assignment Operator: " << type << std::endl;
 	return (*this);
 }
 
-std::string AAnimal::getType() const
+const std::string& AAnimal::getType() const
 {
 	return (this->type);
 }

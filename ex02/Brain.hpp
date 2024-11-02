@@ -8,12 +8,12 @@ class Brain
 {
 private:
 	const static size_t maxIdeas = 100;
-	std::string ideas[maxIdeas];
+	std::string         ideas[maxIdeas];
 
 public:
 	Brain();
 	~Brain();
-	Brain(const Brain& rhs);
+	Brain(const Brain& other);
 	Brain& operator=(const Brain& rhs);
 };
 

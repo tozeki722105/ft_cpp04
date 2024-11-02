@@ -1,5 +1,5 @@
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef AANIMAL_HPP
+#define AANIMAL_HPP
 
 #include <iostream>
 #include <string>
@@ -11,12 +11,12 @@ protected:
 
 public:
 	AAnimal();
-	AAnimal(const std::string &t);
+	AAnimal(const std::string& t);
 	virtual ~AAnimal();
-	AAnimal(const AAnimal &rhs);
-	AAnimal &operator=(const AAnimal &rhs);
-	virtual void makeSound() const = 0;
-	std::string getType() const;
+	AAnimal(const AAnimal& other);
+	AAnimal&           operator=(const AAnimal& rhs);
+	virtual void       makeSound() const = 0;
+	const std::string& getType() const;
 };
 
 #endif

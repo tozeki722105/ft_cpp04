@@ -11,13 +11,14 @@ Cat::~Cat()
 	delete this->brain;
 }
 
-Cat::Cat(const Cat& rhs) : AAnimal(rhs.type), brain(new Brain(*(rhs.brain)))
+Cat::Cat(const Cat& otehr) : AAnimal(otehr.type), brain(new Brain(*(otehr.brain)))
 {
 	std::cout << "Cat copy Constructor" << std::endl;
 }
 
 Cat& Cat::operator=(const Cat& rhs)
 {
+	std::cout << "Cat Assignment Operator: " << type << std::endl;
 	if (this == &rhs)
 		return (*this);
 	this->type = rhs.type;

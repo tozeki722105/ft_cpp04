@@ -15,8 +15,8 @@ private:
 public:
 	Cat();
 	virtual ~Cat();
-	Cat(const Cat& rhs);
-	Cat& operator=(const Cat& rhs);
+	Cat(const Cat& other);
+	Cat&         operator=(const Cat& rhs);
 	virtual void makeSound() const;
 };
 
