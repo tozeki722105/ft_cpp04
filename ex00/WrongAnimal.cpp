@@ -22,6 +22,7 @@ WrongAnimal::WrongAnimal(const WrongAnimal& other) : type(other.type)
 
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal& rhs)
 {
+	std::cout << "WrongAnimal Assignment Operator: " << type << std::endl;
 	if (this == &rhs)
 		return (*this);
 	this->type = rhs.type;
