@@ -22,7 +22,7 @@ AAnimal::AAnimal(const AAnimal& other) : type(other.type)
 
 AAnimal& AAnimal::operator=(const AAnimal& rhs)
 {
-	std::cout << "AAnimal Assignment Operator: " << type << std::endl;
+	std::cout << "AAnimal Copy Operator: " << type << std::endl;
 	if (this == &rhs)
 		return (*this);
 	this->type = rhs.type;

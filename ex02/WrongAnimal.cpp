@@ -22,7 +22,7 @@ WrongAnimal::WrongAnimal(const WrongAnimal& other) : type(other.type)
 
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal& rhs)
 {
-	std::cout << "WrongAnimal Assignment Operator: " << type << std::endl;
+	std::cout << "WrongAnimal Copy Operator: " << type << std::endl;
 	if (this == &rhs)
 		return (*this);
 	this->type = rhs.type;
@@ -31,7 +31,7 @@ WrongAnimal& WrongAnimal::operator=(const WrongAnimal& rhs)
 
 void WrongAnimal::makeSound() const
 {
-	std::cout << "Wrong Animal Sound" << std::endl;
+	std::cout << "Wrong Animal Class Don't Make Sound" << std::endl;
 }
 
 const std::string& WrongAnimal::getType() const

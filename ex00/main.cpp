@@ -7,7 +7,7 @@
 int main()
 {
 	Animal* animal = new Animal();
-	animal->makeSound();  // Generic Animal Sound
+	animal->makeSound();  // Animal Class Don't Make Sound
 	delete animal;
 
 	animal = new Dog();
@@ -27,11 +27,11 @@ int main()
 	assert(myDog.getType() == "Dog");
 
 	WrongAnimal* wrongAnimal = new WrongAnimal();
-	wrongAnimal->makeSound();  // Wrong Animal Sound
+	wrongAnimal->makeSound();  // Wrong Animal Class Don't Make Sound
 	delete wrongAnimal;
 
 	wrongAnimal = new WrongCat();  // Slicing problem demonstration
-	wrongAnimal->makeSound();      // Wrong Animal Sound (because makeSound IS
+	wrongAnimal->makeSound();      // Wrong Animal Class Don't Make Sound (because makeSound IS
 								   // virtual in WrongAnimal)
 	delete wrongAnimal;
 

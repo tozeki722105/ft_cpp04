@@ -22,7 +22,7 @@ Animal::Animal(const Animal& other) : type(other.type)
 
 Animal& Animal::operator=(const Animal& rhs)
 {
-	std::cout << "Animal Assignment Operator: " << type << std::endl;
+	std::cout << "Animal Copy Operator: " << type << std::endl;
 	if (this == &rhs)
 		return (*this);
 	this->type = rhs.type;
@@ -36,5 +36,5 @@ const std::string& Animal::getType() const
 
 void Animal::makeSound() const
 {
-	std::cout << "Generic Animal Sound" << std::endl;
+	std::cout << "Animal Class Don't Make Sound" << std::endl;
 }
