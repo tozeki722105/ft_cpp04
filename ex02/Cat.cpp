@@ -11,9 +11,9 @@ Cat::~Cat()
 	delete this->brain;
 }
 
-Cat::Cat(const Cat& otehr) : AAnimal(otehr.type), brain(new Brain(*(otehr.brain)))
+Cat::Cat(const Cat& other) : AAnimal(other.type), brain(new Brain(*(other.brain)))
 {
-	std::cout << "Cat copy Constructor" << std::endl;
+	std::cout << "Cat Copy Constructor" << std::endl;
 }
 
 Cat& Cat::operator=(const Cat& rhs)

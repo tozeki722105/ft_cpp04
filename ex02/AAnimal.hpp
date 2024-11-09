@@ -10,8 +10,7 @@ protected:
 	std::string type;
 
 public:
-	AAnimal();
-	AAnimal(const std::string& t);
+	AAnimal(const std::string& t = "Generic AAnimal");
 	virtual ~AAnimal();
 	AAnimal(const AAnimal& other);
 	AAnimal&           operator=(const AAnimal& rhs);
