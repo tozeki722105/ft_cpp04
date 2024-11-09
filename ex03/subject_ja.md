@@ -103,4 +103,23 @@ $> ./a.out | cat -e
 * heals bob's wounds *$
 ```
 
+短くして、出力を消すとこんな感じ
+
+```c++
+int main() {
+    IMateriaSource* src = new MateriaSource();
+    src->learnMateria(new Ice());
+    src->learnMateria(new Cure());
+    ICharacter* me = new Character("me");
+    ICharacter* bob = new Character("bob");
+    
+	me->equip(src->createMateria("ice"));
+    me->equip(src->createMateria("cure"));
+    
+	delete bob;
+    delete me;
+    delete src;
+}
+```
+
 いつものように、上記よりも多くのテストを実装して提出してください。
