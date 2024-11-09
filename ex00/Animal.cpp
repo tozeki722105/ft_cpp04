@@ -1,10 +1,5 @@
 #include "Animal.hpp"
 
-Animal::Animal() : type("Generic Animal")
-{
-	std::cout << "Animal Constructor: Generic Animal" << std::endl;
-}
-
 Animal::Animal(const std::string& t) : type(t)
 {
 	std::cout << "Animal Constructor: " << t << std::endl;
@@ -29,12 +24,12 @@ Animal& Animal::operator=(const Animal& rhs)
 	return (*this);
 }
 
-const std::string& Animal::getType() const
-{
-	return (this->type);
-}
-
 void Animal::makeSound() const
 {
 	std::cout << "Animal Class Don't Make Sound" << std::endl;
+}
+
+const std::string& Animal::getType() const
+{
+	return (this->type);
 }
