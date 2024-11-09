@@ -98,14 +98,14 @@ void Character::equip(AMateria* m)
 
 void Character::unequip(int idx)
 {
-	if (idx < 0 || idx >= _SLOTS_LIMIT || !_materia_slots[idx])
+	if (idx < 0 || idx >= static_cast<int>(_SLOTS_LIMIT) || !_materia_slots[idx])
 		return;
 	_materia_slots[idx] = NULL;
 }
 
 void Character::use(int idx, ICharacter& target)
 {
-	if (idx < 0 || idx >= _SLOTS_LIMIT || !_materia_slots[idx])
+	if (idx < 0 || idx >= static_cast<int>(_SLOTS_LIMIT) || !_materia_slots[idx])
 		return;
 	_materia_slots[idx]->use(target);
 }
