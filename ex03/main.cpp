@@ -39,5 +39,6 @@ int main()
 	delete src;
 	std::cout << '\n';
 
+	system("leaks -q a.out");
 	return 0;
 }
