@@ -12,11 +12,12 @@ protected:
 	std::string _type;
 
 public:
-	AMateria(std::string const& type = "AMateria");
-	~AMateria();
+	AMateria(std::string const& type = "Generic Materia");
+	virtual ~AMateria();
 	AMateria(const AMateria& other);
-	AMateria&          operator=(const AMateria& other);
-	std::string const& getType() const;  // マテリアの種類を返す
+	AMateria& operator=(const AMateria& other);
+
+	std::string const& getType() const;
 	virtual AMateria*  clone() const = 0;
 	virtual void       use(ICharacter& target);
 };
@@ -38,9 +39,9 @@ AMateria::AMateria(const AMateria& other) : _type(other.getType())
 
 AMateria& AMateria::operator=(const AMateria& other)
 {
+	std::cout << "Animal Copy Operator: " << other._type << std::endl;
 	if (this == &other)
 		return (*this);
-	std::cout << "Animal Copy Operator: " << other._type << std::endl;
 	_type = other._type;
 	return (*this);
 }
