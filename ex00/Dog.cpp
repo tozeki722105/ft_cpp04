@@ -12,7 +12,7 @@ Dog::~Dog()
 
 Dog::Dog(const Dog& other) : Animal(other.type)
 {
-	std::cout << "Dog copy Constructor" << std::endl;
+	std::cout << "Dog Copy Constructor" << std::endl;
 }
 
 Dog& Dog::operator=(const Dog& rhs)

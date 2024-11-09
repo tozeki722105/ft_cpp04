@@ -12,7 +12,7 @@ Cat::~Cat()
 
 Cat::Cat(const Cat& otehr) : Animal(otehr.type)
 {
-	std::cout << "Cat copy Constructor" << std::endl;
+	std::cout << "Cat Copy Constructor" << std::endl;
 }
 
 Cat& Cat::operator=(const Cat& rhs)
