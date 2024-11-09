@@ -18,7 +18,7 @@ Brain::Brain(const Brain& other)
 
 Brain& Brain::operator=(const Brain& rhs)
 {
-	std::cout << "Brain Copy Operator: " << std::endl;
+	std::cout << "Brain Copy Operator" << std::endl;
 	if (this == &rhs)
 		return (*this);
 	for (size_t i = 0; i < maxIdeas; i++)

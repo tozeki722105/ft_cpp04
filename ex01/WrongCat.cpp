@@ -12,7 +12,7 @@ WrongCat::~WrongCat()
 
 WrongCat::WrongCat(const WrongCat& other) : WrongAnimal(other.type)
 {
-	std::cout << "WrongCat copy Constructor" << std::endl;
+	std::cout << "WrongCat Copy Constructor" << std::endl;
 }
 
 WrongCat& WrongCat::operator=(const WrongCat& rhs)

@@ -1,23 +1,18 @@
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal() : type("")
-{
-	std::cout << "WrongAnimal Constructor" << std::endl;
-}
-
 WrongAnimal::WrongAnimal(const std::string& t) : type(t)
 {
-	std::cout << "WrongAnimal Constructor " << "type is " << t << std::endl;
+	std::cout << "WrongAnimal Constructor: " << t << std::endl;
 }
 
 WrongAnimal::~WrongAnimal()
 {
-	std::cout << "WrongAnimal Destructor" << std::endl;
+	std::cout << "WrongAnimal Destructor: " << type << std::endl;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal& other) : type(other.type)
 {
-	std::cout << "WrongAnimal Copy Constructor" << std::endl;
+	std::cout << "WrongAnimal Copy Constructor: " << type << std::endl;
 }
 
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal& rhs)
