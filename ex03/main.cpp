@@ -6,6 +6,7 @@
 
 int main()
 {
+	//subject
 	{
 		IMateriaSource *src = new MateriaSource();
 		std::cout << '\n';
@@ -39,10 +40,9 @@ int main()
 
 		delete src;
 		std::cout << '\n';
-
-		system("leaks -q a.out");
-		return 0;
 	}
+
+	//unequipテスト
 	{
 		IMateriaSource *src = new MateriaSource();
 		src->learnMateria(new Ice());
@@ -69,6 +69,8 @@ int main()
 		delete src;
 		delete ice;
 	}
+
+	//akazukiテスト
 	{
 		IMateriaSource *src = new MateriaSource();
 		src->learnMateria(new Ice());
@@ -76,7 +78,7 @@ int main()
 		src->learnMateria(new Ice());
 		src->learnMateria(new Cure());
 		src->learnMateria(new Ice());
-		src->learnMateria(new Cure());
+		src->learnMateria(new Cure()); //leak
 		delete src;
 	}
 	{
@@ -96,7 +98,7 @@ int main()
 		me->use(0, *bob);
 		me->use(1, *bob);
 		me->use(5, *bob);
-		delete tmp;
+		delete tmp; //error
 		delete tmp1;
 		delete bob;
 		delete me;

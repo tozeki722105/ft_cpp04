@@ -6,23 +6,17 @@
 
 int main()
 {
-	// const AAnimal* j = new Dog();
-	// const AAnimal* i = new Cat();
+	
+	{
+		AAnimal* animals[4] = {new Dog(), new Dog(), new Cat(), new Cat()};
+		for (int i = 0; i < 4; i++)
+			delete animals[i];
+	}
 
-	// delete j;//should not create a leak
-	// delete i;
-
-	// Dog *a = new Dog();
+	// // コンパイルエラーテスト
 	// {
-	//     Dog *b = new Dog();
-	//     *b = *a;
-	//     delete b;
+	// 	AAnimal *aAnimal = new AAnimal();
 	// }
-	// delete a;
 
-	AAnimal* animals[4] = {new Dog(), new Dog(), new Cat(), new Cat()};
-	for (int i = 0; i < 4; i++)
-		delete animals[i];
-
-	system("leaks -q a.out");
+	// system("leaks -q a.out");
 }
