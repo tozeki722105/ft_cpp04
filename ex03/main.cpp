@@ -77,7 +77,7 @@ int main()
 		src->learnMateria(new Cure());
 		src->learnMateria(new Ice());
 		src->learnMateria(new Cure());
-		src->learnMateria(new Ice());
+		src->learnMateria(new Ice()); //leak
 		src->learnMateria(new Cure()); //leak
 		delete src;
 	}
@@ -102,6 +102,6 @@ int main()
 		delete tmp1;
 		delete bob;
 		delete me;
-		delete src;
+		delete src; //crash
 	}
 }
