@@ -98,7 +98,7 @@ int main()
 		me->use(0, *bob);
 		me->use(1, *bob);
 		me->use(5, *bob);
-		delete tmp; //error
+		delete tmp; //error-fact
 		delete tmp1;
 		delete bob;
 		delete me;
