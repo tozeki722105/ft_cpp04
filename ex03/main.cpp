@@ -6,39 +6,100 @@
 
 int main()
 {
-	IMateriaSource* src = new MateriaSource();
-	std::cout << '\n';
+	{
+		IMateriaSource *src = new MateriaSource();
+		std::cout << '\n';
 
-	src->learnMateria(new Ice());
-	src->learnMateria(new Cure());
-	std::cout << '\n';
+		src->learnMateria(new Ice());
+		src->learnMateria(new Cure());
+		std::cout << '\n';
 
-	ICharacter* me = new Character("me");
-	std::cout << '\n';
+		ICharacter *me = new Character("me");
+		std::cout << '\n';
 
-	AMateria* tmp;
-	tmp = src->createMateria("ice");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	std::cout << '\n';
+		AMateria *tmp;
+		tmp = src->createMateria("ice");
+		me->equip(tmp);
+		tmp = src->createMateria("cure");
+		me->equip(tmp);
+		std::cout << '\n';
 
-	ICharacter* bob = new Character("bob");
-	std::cout << '\n';
+		ICharacter *bob = new Character("bob");
+		std::cout << '\n';
 
-	me->use(0, *bob);
-	me->use(1, *bob);
-	std::cout << '\n';
+		me->use(0, *bob);
+		me->use(1, *bob);
+		std::cout << '\n';
 
-	delete bob;
-	std::cout << '\n';
+		delete bob;
+		std::cout << '\n';
 
-	delete me;
-	std::cout << '\n';
+		delete me;
+		std::cout << '\n';
 
-	delete src;
-	std::cout << '\n';
+		delete src;
+		std::cout << '\n';
 
-	system("leaks -q a.out");
-	return 0;
+		system("leaks -q a.out");
+		return 0;
+	}
+	{
+		IMateriaSource *src = new MateriaSource();
+		src->learnMateria(new Ice());
+		src->learnMateria(new Cure());
+
+		ICharacter *me = new Character("me");
+		AMateria   *ice = src->createMateria("ice");
+		AMateria   *cure = src->createMateria("cure");
+
+		me->equip(ice);
+		me->equip(cure);
+		ICharacter *bob = new Character("bob");
+		me->use(0, *bob);
+		me->use(1, *bob);
+		me->unequip(0);
+		std::cout << "unequip(0)" << std::endl;
+		me->use(1, *bob);
+		AMateria *cure2 = src->createMateria("cure");
+		me->equip(cure2);
+		me->use(0, *bob);
+		me->use(1, *bob);
+		delete bob;
+		delete me;
+		delete src;
+		delete ice;
+	}
+	{
+		IMateriaSource *src = new MateriaSource();
+		src->learnMateria(new Ice());
+		src->learnMateria(new Cure());
+		src->learnMateria(new Ice());
+		src->learnMateria(new Cure());
+		src->learnMateria(new Ice());
+		src->learnMateria(new Cure());
+		delete src;
+	}
+	{
+		std::cout << "-------------subjectTest------------" << std::endl;
+		IMateriaSource *src = new MateriaSource();
+		src->learnMateria(new Ice());
+		src->learnMateria(new Cure());
+		ICharacter *me = new Character("me");
+		AMateria   *tmp;
+		AMateria   *tmp1;
+		tmp = src->createMateria("ice");
+		me->equip(tmp);
+		tmp1 = src->createMateria("cure");
+		me->equip(tmp1);
+		me->unequip(1);
+		ICharacter *bob = new Character("bob");
+		me->use(0, *bob);
+		me->use(1, *bob);
+		me->use(5, *bob);
+		delete tmp;
+		delete tmp1;
+		delete bob;
+		delete me;
+		delete src;
+	}
 }
