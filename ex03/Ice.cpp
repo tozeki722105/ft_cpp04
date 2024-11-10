@@ -26,6 +26,7 @@ Ice& Ice::operator=(const Ice& other)
 
 AMateria* Ice::clone() const
 {
+	std::cout << "clone: " << _type << std::endl;
 	return new Ice();
 }
 

@@ -55,16 +55,22 @@ void MateriaSource::learnMateria(AMateria* new_materia)
 	for (size_t i = 0; i < _SLOTS_LIMIT; i++) {
 		if (!_materia_slots[i]) {
 			_materia_slots[i] = new_materia;
+			std::cout << "Lean materia: " << new_materia->getType() << std::endl;
 			return;
 		}
 	}
+	std::cout << "Materia_slots are full" << std::endl;
 }
 
 AMateria* MateriaSource::createMateria(std::string const& type)
 {
 	for (size_t i = 0; i < _SLOTS_LIMIT; i++) {
-		if (_materia_slots[i] && type == _materia_slots[i]->getType())
+		if (_materia_slots[i] && type == _materia_slots[i]->getType()){
+			std::cout << "Create materia: " << _materia_slots[i]->getType() << std::endl;
 			return _materia_slots[i]->clone();
+		}
+			
 	}
+	std::cout << "No type " << type << " materia was found" << std::endl;
 	return NULL;
 }

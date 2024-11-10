@@ -26,6 +26,7 @@ Cure& Cure::operator=(const Cure& other)
 
 AMateria* Cure::clone() const
 {
+	std::cout << "clone: " << _type << std::endl;
 	return new Cure();
 }
 

@@ -77,8 +77,8 @@ int main()
 		src->learnMateria(new Cure());
 		src->learnMateria(new Ice());
 		src->learnMateria(new Cure());
-		src->learnMateria(new Ice()); //leak
-		src->learnMateria(new Cure()); //leak
+		// src->learnMateria(new Ice()); //leak
+		// src->learnMateria(new Cure()); //leak
 		delete src;
 	}
 	{
@@ -98,7 +98,7 @@ int main()
 		me->use(0, *bob);
 		me->use(1, *bob);
 		me->use(5, *bob);
-		delete tmp; //error-fact
+		// delete tmp; //error-fact
 		delete tmp1;
 		delete bob;
 		delete me;
