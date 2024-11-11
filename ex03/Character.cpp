@@ -59,34 +59,35 @@ std::string const& Character::getName() const
 
 void Character::equip(AMateria* m)
 {
-	if (!m){
+	if (!m) {
 		std::cout << "Material pointer is NULL" << std::endl;
 		return;
 	}
 	for (size_t i = 0; i < _SLOTS_LIMIT; i++) {
 		if (!_materia_slots[i]) {
 			_materia_slots[i] = m;
-			std::cout << "Equipped with type " << m->getType() << std::endl;
+			std::cout << "Equipped with type: " << m->getType() << std::endl;
 			return;
 		}
 	}
+	std::cout << _name << "'s Materia_slots are full" << std::endl;
 }
 
 void Character::unequip(int idx)
 {
-	if (idx < 0 || idx >= static_cast<int>(_SLOTS_LIMIT) || !_materia_slots[idx]){
+	if (idx < 0 || idx >= static_cast<int>(_SLOTS_LIMIT) || !_materia_slots[idx]) {
 		std::cout << "Out of range or unregistered idx" << std::endl;
-		return ;
+		return;
 	}
-	std::cout << "Idx " << idx <<" equipment is unequipped" << std::endl;
+	std::cout << "Idx: " << idx << " equipment is unequipped" << std::endl;
 	_materia_slots[idx] = NULL;
 }
 
 void Character::use(int idx, ICharacter& target)
 {
-	if (idx < 0 || idx >= static_cast<int>(_SLOTS_LIMIT) || !_materia_slots[idx]){
+	if (idx < 0 || idx >= static_cast<int>(_SLOTS_LIMIT) || !_materia_slots[idx]) {
 		std::cout << "Out of range or unregistered idx" << std::endl;
-		return ;
+		return;
 	}
 	_materia_slots[idx]->use(target);
 }

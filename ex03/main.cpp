@@ -6,7 +6,7 @@
 
 int main()
 {
-	//subject
+	// subject
 	{
 		IMateriaSource *src = new MateriaSource();
 		std::cout << '\n';
@@ -42,7 +42,7 @@ int main()
 		std::cout << '\n';
 	}
 
-	//unequipテスト
+	// unequipテスト
 	{
 		IMateriaSource *src = new MateriaSource();
 		src->learnMateria(new Ice());
@@ -70,7 +70,36 @@ int main()
 		delete ice;
 	}
 
-	//akazukiテスト
+	// equip full テスト
+	{
+		IMateriaSource *src = new MateriaSource();
+		std::cout << '\n';
+		src->learnMateria(new Ice());
+		std::cout << '\n';
+		src->learnMateria(new Cure());
+		std::cout << '\n';
+		ICharacter *me = new Character("me");
+		std::cout << '\n';
+		me->equip(src->createMateria("cure"));
+		std::cout << '\n';
+		me->equip(src->createMateria("ice"));
+		std::cout << '\n';
+		me->equip(src->createMateria("cure"));
+		std::cout << '\n';
+		me->equip(src->createMateria("ice"));
+		std::cout << '\n';
+		AMateria *tmp = src->createMateria("cure");
+		me->equip(tmp);
+		std::cout << '\n';
+		delete me;
+		std::cout << '\n';
+		delete src;
+		std::cout << '\n';
+		delete tmp;
+	}
+	std::cout << '\n';
+
+	// akazukiテスト
 	{
 		IMateriaSource *src = new MateriaSource();
 		src->learnMateria(new Ice());
@@ -101,7 +130,7 @@ int main()
 		// delete tmp; //error-fact
 		delete tmp1;
 		delete bob;
-		delete me;
-		delete src; //crash
+		delete me;  // tmpをdeleteすると、ここでcrash
+		delete src;
 	}
 }
