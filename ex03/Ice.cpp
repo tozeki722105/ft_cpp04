@@ -20,7 +20,7 @@ Ice& Ice::operator=(const Ice& other)
 	std::cout << "Ice Copy Operator" << std::endl;
 	if (this == &other)
 		return *this;
-	_type = other._type;
+	AMateria::operator=(other);
 	return *this;
 }
 

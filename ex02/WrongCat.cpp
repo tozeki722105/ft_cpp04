@@ -20,7 +20,7 @@ WrongCat& WrongCat::operator=(const WrongCat& rhs)
 	std::cout << "WrongCat Copy Operator: " << type << std::endl;
 	if (this == &rhs)
 		return (*this);
-	this->type = rhs.type;
+	WrongAnimal::operator=(rhs);
 	return (*this);
 }
 

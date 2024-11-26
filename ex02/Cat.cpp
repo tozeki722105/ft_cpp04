@@ -21,7 +21,7 @@ Cat& Cat::operator=(const Cat& rhs)
 	std::cout << "Cat Copy Operator: " << type << std::endl;
 	if (this == &rhs)
 		return (*this);
-	this->type = rhs.type;
+	AAnimal::operator=(rhs);
 	delete this->brain;
 	this->brain = new Brain(*(rhs.brain));
 	return (*this);

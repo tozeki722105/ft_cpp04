@@ -20,7 +20,7 @@ Cure& Cure::operator=(const Cure& other)
 	std::cout << "Cure Copy Operator" << std::endl;
 	if (this == &other)
 		return *this;
-	_type = other._type;
+	AMateria::operator=(other);
 	return *this;
 }
 
